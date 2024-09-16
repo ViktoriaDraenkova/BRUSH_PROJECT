@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="100"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="30dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="30dp" />
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_personal_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_top"
+        android:contentInsetStartWithNavigation="0dp"
+        android:titleTextAppearance="@style/toolbar_style_white_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/chevron_left_white"
+        app:title="@string/personal_account"
+        app:titleTextColor="@color/white" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:src="@drawable/settingsfull"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_personal_account"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toEndOf="@id/toolbar_personal_account"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <LinearLayout
+        android:id="@+id/person_image_frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:orientation="vertical"
+        android:background="@drawable/splash_blue_white_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_personal_account">
+
+        <ImageButton
+            android:id="@+id/person_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/img_round"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="Вася Пупкин"
+            android:layout_marginVertical="14dp"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line_1"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/light_grey"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/person_image_frameLayout" />
+
+
+    <TextView
+        android:id="@+id/days"
+        style="@style/TextStyleBlue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="Aaaa"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/line_1"
+        app:layout_constraintWidth_percent="0.27" />
+
+
+    <TextView
+        android:id="@+id/per_days"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="FFFFFFFFFFFFFFFFFFFFFFFFF"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/days"
+        app:layout_constraintWidth_percent="0.27" />
+
+    <TextView
+        android:id="@+id/achivement"
+        style="@style/TextStyleBlue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+
+        android:text="Aaaa"
+        app:layout_constraintEnd_toStartOf="@id/count_per_day"
+        app:layout_constraintStart_toEndOf="@id/days"
+        app:layout_constraintTop_toBottomOf="@id/line_1"
+        app:layout_constraintWidth_percent="0.27" />
+
+    <TextView
+        android:id="@+id/text_for_achivement"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="FFFFFFFFFFFFFFFFFFFFFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/you_clean_teeth"
+        app:layout_constraintStart_toEndOf="@id/per_days"
+        app:layout_constraintTop_toBottomOf="@id/achivement"
+        app:layout_constraintWidth_percent="0.27"
+
+        />
+
+
+    <TextView
+        android:id="@+id/count_per_day"
+        style="@style/TextStyleBlue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="Aaaa"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@id/line_1"
+        app:layout_constraintWidth_percent="0.27" />
+
+    <TextView
+        android:id="@+id/you_clean_teeth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="FFFFFFFFFFFFFFFFFFFFFFFFF"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@id/count_per_day"
+        app:layout_constraintWidth_percent="0.27" />
+
+
+    <View
+        android:id="@+id/line_2"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/light_grey"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/text_for_achivement" />
+
+    <TextView
+        android:id="@+id/notifications"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:paddingVertical="16dp"
+        android:text="Напоминания"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toTopOf="@id/line_2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notifications_recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toEndOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/notifications" />
+
+    <Button
+        style="@style/ButtonAddNotification"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:text="+ Добавить напоминание"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

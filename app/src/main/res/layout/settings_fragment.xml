@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/white"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.5"
+        android:contentInsetStartWithNavigation="0dp"
+        android:titleTextAppearance="@style/style_for_toolbar"
+        app:navigationIcon="@drawable/chevron_left"
+        app:title="@string/settings" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginVertical="16dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/account"
+        android:textColor="@color/blue_top"
+        android:textSize="24sp" />
+
+
+    <Button
+        android:id="@+id/acccount"
+        style="@style/SettingsButtonsStyle"
+        android:drawableStart="@drawable/person_small"
+        android:text="@string/account" />
+
+    <Button
+        android:id="@+id/switch_account"
+        style="@style/SettingsButtonsStyle"
+        android:drawableStart="@drawable/switch_account"
+        android:text="@string/switch_account" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginVertical="16dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/settings"
+        android:textColor="@color/blue_top"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/button_language"
+        style="@style/SettingsButtonsStyle"
+        android:drawableStart="@drawable/locale"
+        android:text="Язык"
+
+        />
+
+    <Button
+        android:id="@+id/button_notifocations"
+        style="@style/SettingsButtonsStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/bell"
+        android:text="Уведомления" />
+
+    <Button
+        android:id="@+id/button_secure"
+        style="@style/SettingsButtonsStyle"
+        android:drawableStart="@drawable/lock"
+        android:text="Безопасность" />
+
+    <Button
+        android:id="@+id/button_support"
+        style="@style/SettingsButtonsStyle"
+        android:drawableStart="@drawable/headphones"
+        android:text="Помощь и поддержка"
+        android:textColor="@color/dark_grey" />
+
+    <Button xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/button_about_app"
+        style="@style/SettingsButtonsStyle"
+        android:drawableStart="@drawable/info"
+        android:text="О приложении" />
+
+
+</LinearLayout>

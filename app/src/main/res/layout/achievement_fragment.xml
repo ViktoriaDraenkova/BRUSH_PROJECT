@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="30dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="30dp" />
+
+    <View
+        android:id="@+id/line_1"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/light_grey"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/achievement_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Молодец! Так держать"
+        android:textColor="@color/dark_grey"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/line_1" />
+
+    <TextView
+        android:id="@+id/achievement"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Во вторник ты чистил зубы целые 3 минуты!"
+        android:textSize="16sp"
+        android:textColor="@color/dark_grey_opacity60"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/achievement_name"
+        app:layout_constraintWidth_percent="0.7"
+
+        />
+
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="14dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="+3"
+        android:textSize="16sp"
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/dark_grey_opacity60"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintTop_toTopOf="@id/achievement_name"
+        app:layout_constraintBottom_toBottomOf="@+id/achievement"
+        app:layout_constraintWidth_percent="0.1"
+        />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/choise_indicator"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/achievement_name"
+        app:layout_constraintStart_toEndOf="@id/count"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintWidth_percent="0.1"
+        app:layout_constraintTop_toTopOf="@id/achievement_name"
+        app:layout_constraintBottom_toBottomOf="@+id/achievement"
+        />
+
+    <View
+        android:id="@+id/line_2"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/light_grey"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/achievement"
+/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

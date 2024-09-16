@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Usmeshka_Groovy</string>
+    <string name="videos">Видео</string>
+    <string name="home">Главная</string>
+    <string name="goals">Цели</string>
+    <string name="profile">Профиль</string>
+    <string name="my_name_is">Меня зовут Стомик \n Давай чистить зубки вместе!</string>
+    <string name="settings">Настройки</string>
+    <string name="account">Аккаунт</string>
+    <string name="switch_account">Переключить аккаунт</string>
+    <string name="russian">Русский</string>
+    <string name="english">English</string>
+    <string name="start">Старт</string>
+    <string name="hello">Привет!</string>
+    <string name="personal_account">Личный кабинет</string>
+</resources>
