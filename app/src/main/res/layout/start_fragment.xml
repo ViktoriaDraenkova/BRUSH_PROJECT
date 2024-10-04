@@ -1,59 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/gradient_for_background">
+    android:background="@drawable/gradient_for_background"
+    tools:context="ui.firstfragment.StartFragment">
 
     <LinearLayout
-        android:id = "@+id/layout_for_hello"
+        android:id="@+id/layout_for_hello"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
             android:gravity="center_horizontal"
             android:text="@string/hello"
             android:textColor="@color/white"
             android:textSize="45sp"
-            android:fontFamily="@font/roboto_bold"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
             android:gravity="center_horizontal"
             android:text="@string/my_name_is"
             android:textColor="@color/white"
-            android:fontFamily="@font/roboto_medium"
             android:textSize="24sp"
             tools:ignore="MissingConstraints" />
 
     </LinearLayout>
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:src="@drawable/stomic"
-        app:layout_constraintTop_toBottomOf="@id/layout_for_hello"
-        app:layout_constraintBottom_toTopOf="@+id/button_new_playlist"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_start"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_for_hello" />
 
     <Button
-        android:id="@+id/button_new_playlist"
+        android:id="@+id/button_start"
         style="@style/ButtonStart"
-        android:text="@string/start"
         android:layout_marginBottom="23dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/start"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

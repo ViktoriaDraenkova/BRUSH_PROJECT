@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_for_background">
+    android:background="@drawable/gradient_for_background"
+    tools:context=".ui.home.TimerFragment">
 
     <LinearLayout
         android:id="@+id/timer"
@@ -16,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id = "@+id/time_mins"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/gradient_for_timer"
@@ -38,6 +40,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
+            android:id = "@+id/time_sec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/gradient_for_timer"
@@ -216,7 +219,7 @@
 
 
     <Button
-        android:id="@+id/button_new_playlist"
+        android:id="@+id/button_start_cleaning"
         style="@style/ButtonStart"
         android:layout_marginBottom="23dp"
         android:text="@string/start"

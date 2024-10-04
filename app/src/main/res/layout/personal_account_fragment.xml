@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:alpha="100"
     android:background="@color/white"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ui.profile.PersonalAccountFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_end"
