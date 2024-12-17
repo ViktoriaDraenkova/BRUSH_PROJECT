@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="86dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="20%"
+        android:text="@string/_20"
         android:textColor="@color/white"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
@@ -35,27 +35,26 @@
         app:layout_constraintWidth_percent="0.15" />
 
     <TextView
-        android:id="@+id/percent_yet"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
-        android:text="Завершено"
+        android:text="@string/finished"
         android:textColor="@color/white_opacity50"
-        android:textSize="16dp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@id/percent_completed"
         app:layout_constraintStart_toEndOf="@id/percent_completed"
         app:layout_constraintTop_toTopOf="@id/percent_completed"
         app:layout_constraintWidth_percent="0.4" />
 
     <TextView
-        android:id="@+id/user_data"
+        android:id="@+id/user_data_or_sink_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="Данные о пользователе"
+        android:text="@string/users_data"
         android:textColor="@color/white"
-        android:textSize="16dp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintTop_toBottomOf="@id/percent_completed" />
 
@@ -66,11 +65,11 @@
         android:layout_marginStart="9dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="9dp"
+        android:contentDescription="@string/_20"
         android:src="@drawable/_visible1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_data"
-        android:contentDescription="20 percent yet" />
+        app:layout_constraintTop_toBottomOf="@id/user_data_or_sink_text" />
 
     <ImageView
         android:id="@+id/mark2"
@@ -82,7 +81,7 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_data" />
+        app:layout_constraintTop_toBottomOf="@id/user_data_or_sink_text" />
 
     <ImageView
         android:id="@+id/mark3"
@@ -94,7 +93,7 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_data" />
+        app:layout_constraintTop_toBottomOf="@id/user_data_or_sink_text" />
 
     <ImageView
         android:id="@+id/mark4"
@@ -106,19 +105,7 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_data" />
-
-    <ImageView
-        android:id="@+id/mark5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="48dp"
-        android:src="@drawable/_visible5"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_data" />
+        app:layout_constraintTop_toBottomOf="@id/user_data_or_sink_text" />
 
     <LinearLayout
         android:id="@+id/reg_who_use"
@@ -127,11 +114,11 @@
         android:layout_marginTop="260dp"
         android:background="@drawable/bottomsheet_bg"
         android:orientation="vertical"
-        android:visibility="gone"
+        android:visibility="visible"
         app:behavior_hideable="false"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_data">
+        app:layout_constraintTop_toBottomOf="@id/user_data_or_sink_text">
 
         <TextView
             android:id="@+id/registration_20"
@@ -140,7 +127,7 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="Регистрация"
+            android:text="@string/registration"
             android:textColor="@color/black"
             android:textSize="28sp"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
@@ -153,11 +140,12 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="Кто будет использовать  придложение?"
+            android:text="@string/who_will_use_app"
             android:textColor="@color/dark_grey_opacity60"
-            android:textSize="16dp" />
+            android:textSize="16sp" />
 
         <RadioGroup
+            android:id="@+id/who_use_radio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
@@ -169,17 +157,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_regular"
-                android:text="Ребёнок"
-                android:textSize="20dp" />
+                android:text="@string/child"
+                android:textSize="20sp" />
 
             <RadioButton
                 android:id="@+id/radio_ninjas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_regular"
-                android:text="Родитель"
-                android:textSize="20dp" />
+                android:text="@string/parent"
+                android:textSize="20sp" />
         </RadioGroup>
+
+        <Button
+            android:id="@+id/next_btn_20"
+            style="@style/ButtonAddNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingVertical="10dp"
+            android:text="@string/next"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:enabled="false"/>
     </LinearLayout>
 
     <LinearLayout
@@ -193,7 +195,7 @@
         app:behavior_hideable="false"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_data">
+        app:layout_constraintTop_toBottomOf="@id/user_data_or_sink_text">
 
         <TextView
             android:id="@+id/registration_40"
@@ -202,7 +204,7 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="Регистрация"
+            android:text="@string/registration"
             android:textColor="@color/black"
             android:textSize="28sp"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
@@ -215,9 +217,9 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="Введите имя и фамилию ребёнка"
+            android:text="@string/enter_name_surname"
             android:textColor="@color/dark_grey_opacity60"
-            android:textSize="16dp" />
+            android:textSize="16sp" />
 
 
         <EditText
@@ -225,7 +227,7 @@
             style="@style/EdittextStyleWithDiscription"
             android:layout_marginTop="45dp"
             android:autofillHints=""
-            android:hint="Имя"
+            android:hint="@string/name"
             tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
@@ -233,11 +235,11 @@
             style="@style/EdittextStyleWithDiscription"
             android:layout_marginTop="12dp"
             android:autofillHints=""
-            android:hint="Фимилия"
+            android:hint="@string/second_name"
             tools:ignore="TouchTargetSizeCheck" />
 
         <Button
-            android:id="@+id/next"
+            android:id="@+id/next_btn_40"
             style="@style/ButtonAddNotification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -245,7 +247,7 @@
             android:layout_marginTop="24dp"
             android:fontFamily="@font/roboto_medium"
             android:paddingVertical="10dp"
-            android:text="Далее"
+            android:text="@string/next"
             android:textAllCaps="false"
             android:textSize="16sp" />
     </LinearLayout>
@@ -262,7 +264,7 @@
         app:behavior_hideable="false"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_data">
+        app:layout_constraintTop_toBottomOf="@id/user_data_or_sink_text">
 
         <TextView
             android:id="@+id/registration_60"
@@ -271,25 +273,25 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="Регистрация"
+            android:text="@string/registration"
             android:textColor="@color/black"
             android:textSize="28sp"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/notificatoins_agreement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="Хотели бы вы получать уведомления о режиме чистки зубов вашего ребенка,о новых обновлениях?"
+            android:text="@string/asking_about_notifs"
             android:textColor="@color/dark_grey_opacity60"
             android:textSize="16dp" />
 
 
         <RadioGroup
+            android:id="@+id/notificatoins_agreement_radio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
@@ -301,7 +303,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_regular"
-                android:text="Да"
+                android:text="@string/yes"
                 android:textSize="20dp" />
 
             <RadioButton
@@ -309,12 +311,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_regular"
-                android:text="Нет"
+                android:text="@string/no"
                 android:textSize="20dp" />
         </RadioGroup>
 
         <Button
-            android:id="@+id/next_60"
+            android:id="@+id/next_btn_60"
             style="@style/ButtonAddNotification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -322,7 +324,7 @@
             android:layout_marginTop="24dp"
             android:fontFamily="@font/roboto_medium"
             android:paddingVertical="10dp"
-            android:text="Далее"
+            android:text="@string/next"
             android:textAllCaps="false"
             android:textSize="16sp" />
     </LinearLayout>
@@ -338,7 +340,7 @@
         app:behavior_hideable="false"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_data">
+        app:layout_constraintTop_toBottomOf="@id/user_data_or_sink_text">
 
         <TextView
             android:id="@+id/registration_80"
@@ -347,7 +349,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="Регистрация"
+            android:text="@string/registration"
             android:textColor="@color/black"
             android:textSize="28sp"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
@@ -360,9 +362,9 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="Введите ваш email для получения уведомлений о режиме чистки зубов вашего ребенка, о новых обновлениях."
+            android:text="@string/email_for_notifications"
             android:textColor="@color/dark_grey_opacity60"
-            android:textSize="16dp" />
+            android:textSize="16sp" />
 
 
         <EditText
@@ -370,12 +372,12 @@
             style="@style/EdittextStyleWithDiscription"
             android:layout_marginTop="12dp"
             android:autofillHints=""
-            android:hint="Введите ваш email"
+            android:hint="@string/enter_your_email"
             tools:ignore="TextFields,TouchTargetSizeCheck" />
 
 
         <Button
-            android:id="@+id/next_80"
+            android:id="@+id/next_btn_80"
             style="@style/ButtonAddNotification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -383,7 +385,7 @@
             android:layout_marginTop="24dp"
             android:fontFamily="@font/roboto_medium"
             android:paddingVertical="10dp"
-            android:text="Далее"
+            android:text="@string/next"
             android:textAllCaps="false"
             android:textSize="16sp" />
     </LinearLayout>

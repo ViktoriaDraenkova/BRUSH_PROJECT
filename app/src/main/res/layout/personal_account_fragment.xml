@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:alpha="100"
     android:background="@color/white"
-    android:orientation="vertical"
-    tools:context=".ui.profile.PersonalAccountFragment">
+    android:orientation="vertical">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_end"
@@ -39,10 +38,13 @@
         app:titleTextColor="@color/white" />
 
     <ImageView
+        android:id="@+id/settings"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="50dp"
         android:src="@drawable/settingsfull"
+        android:paddingVertical="16dp"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="@id/toolbar_personal_account"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/toolbar_personal_account"
@@ -53,8 +55,8 @@
         android:id="@+id/person_image_frameLayout"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:orientation="vertical"
         android:background="@drawable/splash_blue_white_background"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar_personal_account">
@@ -68,12 +70,13 @@
             android:importantForAccessibility="no" />
 
         <TextView
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="14dp"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center"
             android:text="Вася Пупкин"
-            android:layout_marginVertical="14dp"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -96,7 +99,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:gravity="center"
-        android:text="Aaaa"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintTop_toBottomOf="@id/line_1"
         app:layout_constraintWidth_percent="0.27" />
@@ -107,7 +109,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="FFFFFFFFFFFFFFFFFFFFFFFFF"
+        android:text="@string/you_clean_teeth"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintTop_toBottomOf="@id/days"
         app:layout_constraintWidth_percent="0.27" />
@@ -119,8 +121,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:gravity="center"
-
-        android:text="Aaaa"
         app:layout_constraintEnd_toStartOf="@id/count_per_day"
         app:layout_constraintStart_toEndOf="@id/days"
         app:layout_constraintTop_toBottomOf="@id/line_1"
@@ -131,13 +131,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="FFFFFFFFFFFFFFFFFFFFFFFFF"
+        android:text="@string/you_get"
         app:layout_constraintEnd_toStartOf="@+id/you_clean_teeth"
         app:layout_constraintStart_toEndOf="@id/per_days"
         app:layout_constraintTop_toBottomOf="@id/achivement"
-        app:layout_constraintWidth_percent="0.27"
-
-        />
+        app:layout_constraintWidth_percent="0.27" />
 
 
     <TextView
@@ -147,7 +145,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:gravity="center"
-        android:text="Aaaa"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintTop_toBottomOf="@id/line_1"
         app:layout_constraintWidth_percent="0.27" />
@@ -157,7 +154,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="FFFFFFFFFFFFFFFFFFFFFFFFF"
+        android:text="@string/you_clean_teeth"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintTop_toBottomOf="@id/count_per_day"
         app:layout_constraintWidth_percent="0.27" />
@@ -186,21 +183,32 @@
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintTop_toTopOf="@id/line_2" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/notifications_recyclerView"
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/notifications" />
+        app:layout_constraintTop_toBottomOf="@+id/notifications">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notifications_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/notify_cards_fragment" />
+
+    </ScrollView>
 
     <Button
+        android:id="@+id/add_notification"
         style="@style/ButtonAddNotification"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="18dp"
-        android:text="+ Добавить напоминание"
-        android:textSize="16dp"
+        android:text="@string/add_notification"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline_start" />

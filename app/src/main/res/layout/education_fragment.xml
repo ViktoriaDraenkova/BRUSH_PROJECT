@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="100"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/blue_top"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:contentInsetStartWithNavigation="0dp"
+            android:titleTextAppearance="@style/toolbar_style_white_text"
+            android:visibility="visible"
+            app:navigationIcon="@drawable/chevron_left_white"
+            app:title="@string/videos"
+            app:titleTextColor="@color/white" />
+
+        <EditText
+            android:id="@+id/edittext_search_video"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/background_for_search"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="20dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/search_button"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:padding="13dp"
+            android:src="@drawable/ic_search" />
+
+        <ImageView
+            android:id="@+id/filter_button"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="20dp"
+            android:padding="13dp"
+            android:src="@drawable/ic_filter" />
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_top"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="13sp"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="@color/white_opacity80"
+        app:tabIndicatorColor="@color/white"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" />
+
+
+</LinearLayout>

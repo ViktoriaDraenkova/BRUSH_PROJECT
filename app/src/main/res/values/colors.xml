@@ -5,6 +5,7 @@
     <color name="dark_grey_opacity60">#9949454F</color>
     <color name="light_grey">#E9EBF2</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_opacity80">#80FFFFFF</color>
     <color name="white_opacity50">#80FFFFFF</color>
     <color name="blue_top">#6371F4</color>
     <color name="dark_blue">#424FBF</color>

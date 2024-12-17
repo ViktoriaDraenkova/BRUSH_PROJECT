@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_end"
@@ -35,8 +36,8 @@
         android:id="@+id/personal_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/icon_round_58"
         android:layout_marginTop="30dp"
+        android:src="@drawable/icon_round_58"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintTop_toBottomOf="@id/toolbar_progress" />
 
@@ -51,22 +52,23 @@
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintTop_toBottomOf="@id/personal_image" />
 
-    <View
+    <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/analythics_graph"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/persons_name"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginVertical="40dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/persons_name" />
 
-        />
 
     <TextView
         android:id="@+id/analythics_naming"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="30dp"
         android:fontFamily="@font/roboto_medium"
         android:text="Аналитика"
-        android:layout_marginVertical="30dp"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintTop_toBottomOf="@+id/analythics_graph" />
@@ -74,21 +76,22 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/roboto_medium"
         android:text="История"
         android:textColor="@color/blue_top"
         android:textSize="16sp"
-        android:layout_marginTop="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/analythics_naming"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintTop_toBottomOf="@+id/analythics_graph" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/notifications_recyclerView"
+        android:id="@+id/achievement_recyclerView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginVertical="30dp"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/analythics_naming" />
+        app:layout_constraintTop_toBottomOf="@+id/analythics_naming"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

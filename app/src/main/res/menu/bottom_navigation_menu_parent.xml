@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/startFragment"
+        android:icon="@drawable/info"
+        android:title="Инфо" />
+    <item
+        android:id="@+id/educationFragment"
+        android:icon="@drawable/analytics"
+        android:title="Аналитика" />
+    <item
+        android:id="@+id/analythicsFragment"
+        android:icon="@drawable/star"
+        android:title="Важное" />
+
+</menu>

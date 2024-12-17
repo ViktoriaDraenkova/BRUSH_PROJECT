@@ -1,6 +1,7 @@
 package com.ru.practicum.usmeshka_groovy.ui.firstfragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +29,32 @@ class StartFragment : Fragment() {
         binding?.buttonStart?.setOnClickListener {
             findNavController().navigate(R.id.action_startFragment_to_timerFragment)
         }
+        binding?.clanTooth?.animate()
+            ?.rotation(15f)
+            ?.setDuration(1500)
+            ?.withEndAction {
+                startRotationAnimation()
+
+            }
+    }
+
+    private fun startRotationAnimation() {
+        // Поворот направо на 30 градусов
+        binding?.clanTooth?.animate()
+            ?.rotation(-15f)
+            ?.setDuration(3000)
+            ?.withEndAction {
+                // Поворот налево на 30 градусов
+                binding?.clanTooth?.animate()
+                    ?.rotation(15f) // Возвращаем в исходное положение
+                    ?.setDuration(3000)
+                    ?.withEndAction {
+                        // Запускаем анимацию снова
+                        startRotationAnimation()
+                    }
+                    ?.start()
+            }
+            ?.start()
     }
 
     override fun onDestroyView() {

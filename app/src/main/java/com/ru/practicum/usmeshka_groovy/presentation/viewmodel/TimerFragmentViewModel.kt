@@ -2,24 +2,33 @@ package com.ru.practicum.usmeshka_groovy.presentation.viewmodel
 
 import android.os.CountDownTimer
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.ru.practicum.usmeshka_groovy.domain.analytics.AnalyticsInteractor
+import com.ru.practicum.usmeshka_groovy.util.getCurrentDate
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 
-class TimerFragmentViewModel : ViewModel() {
-    private val _timerState = MutableStateFlow(Pair("03", "00"))
+class TimerFragmentViewModel(private val analyticsInteractor: AnalyticsInteractor) : ViewModel() {
+    private val _timerState = MutableStateFlow(Pair("02", "00"))
     val timerState = _timerState.asStateFlow()
 
     private val timer: CountDownTimer = createTimer()
 
     private fun createTimer(): CountDownTimer {
-        return object : CountDownTimer(3 * 60 * 1_000, 1_000) {
+        return object : CountDownTimer(2 * 60 * 1_000, 1_000) {
             override fun onTick(millisUntilFinished: Long) {
                 _timerState.value =
                     Pair(getTimeMins(millisUntilFinished), getTimeSec(millisUntilFinished))
+                if (millisUntilFinished < 1000) {
+                    viewModelScope.launch {
+                        analyticsInteractor.addClean(getCurrentDate())
+                    }
+
+                }
             }
 
-            override fun onFinish() {
-            }
+            override fun onFinish() {}
         }
     }
 
