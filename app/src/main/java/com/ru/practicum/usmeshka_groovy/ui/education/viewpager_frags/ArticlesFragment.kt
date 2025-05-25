@@ -7,12 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import com.practicum.usmeshka_groovy.databinding.ArticlesFragmentBinding
 import com.ru.practicum.usmeshka_groovy.presentation.viewmodel.ArticlesViewModel
 import com.ru.practicum.usmeshka_groovy.ui.education.viewpager_frags.adapters.ArticlesViewAdapter
+import com.ru.practicum.usmeshka_groovy.ui.parent_profile.parent_info.InfoFragmentDirections
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ArticlesFragment : Fragment() {
@@ -36,14 +39,15 @@ class ArticlesFragment : Fragment() {
         viewModel.getArticles()
         recyclerView = binding.recyclerArticles
         articlesViewAdapter = ArticlesViewAdapter {
-            val intent = Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse(it.articleUrl)
-            }
-            startActivity(intent)
+            findNavController().navigate(
+                InfoFragmentDirections.actionInfoFragmentToArticleDetailFragment(
+                    Gson().toJson(it)
+                )
+            )
         }
 
         binding.recyclerArticles.apply {
-            layoutManager =  GridLayoutManager(requireContext(), 2)
+            layoutManager = GridLayoutManager(requireContext(), 2)
             adapter = articlesViewAdapter
         }
         recyclerView.adapter = articlesViewAdapter

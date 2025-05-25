@@ -102,6 +102,9 @@
         <action
             android:id="@+id/action_infoFragment_to_newsFragmentP"
             app:destination="@id/newsFragmentP" />
+        <action
+            android:id="@+id/action_infoFragment_to_articleDetailFragment"
+            app:destination="@id/articleDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/articlesFragmentP"
@@ -168,4 +171,12 @@
         android:id="@+id/parentShopAccountFragment2"
         android:name="com.ru.practicum.usmeshka_groovy.ui.parent_boughts_fragment.ParentShopAccountFragment"
         android:label="ParentShopAccountFragment" />
+    <fragment
+        android:id="@+id/articleDetailFragment"
+        android:name="com.ru.practicum.usmeshka_groovy.ui.education.viewpager_frags.ArticleDetailFragment"
+        android:label="ArticleDetailFragment">
+        <argument
+            android:name="article"
+            app:argType="string" />
+    </fragment>
 </navigation>

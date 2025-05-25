@@ -41,7 +41,7 @@ val repositoryModule = module {
         AchievementsRepositoryImpl()
     }
     single<ArticlesRepository> {
-        ArticlesRepositoryImpl()
+        ArticlesRepositoryImpl(get())
     }
     single<PreferencesManager> {
         PreferencesManagerImpl(get())
