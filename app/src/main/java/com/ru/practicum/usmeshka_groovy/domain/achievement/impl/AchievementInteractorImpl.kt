@@ -5,7 +5,7 @@ import com.ru.practicum.usmeshka_groovy.domain.achievement.AchievementsRepositor
 import com.ru.practicum.usmeshka_groovy.domain.models.Achievement
 import kotlinx.coroutines.flow.Flow
 
-class AchievementInteractorImpl(val achievementsRepository: AchievementsRepository) :
+class AchievementInteractorImpl(private val achievementsRepository: AchievementsRepository) :
     AchievementInteractor {
     override suspend fun getAchievements(): Flow<List<Achievement>> {
         return achievementsRepository.getAchievements()

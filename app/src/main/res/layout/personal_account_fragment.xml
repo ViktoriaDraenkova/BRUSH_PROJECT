@@ -203,7 +203,7 @@
 
     <Button
         android:id="@+id/add_notification"
-        style="@style/ButtonAddNotification"
+        style="@style/ButtonBlueText16White"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="18dp"

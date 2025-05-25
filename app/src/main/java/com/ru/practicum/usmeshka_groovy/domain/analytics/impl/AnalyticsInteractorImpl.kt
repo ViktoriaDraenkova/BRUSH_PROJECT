@@ -69,7 +69,8 @@ class AnalyticsInteractorImpl(val analyticsRepository: AnalyticsRepository) : An
                 listp[i] = (listp[i] ?: 0) + 1
             }
         }
-        return listp.values.average().roundToInt()
+        val res = listp.values.average()
+        return if (!res.isNaN()) res.roundToInt() else 0
     }
 
     override suspend fun addClean(date: Long) {

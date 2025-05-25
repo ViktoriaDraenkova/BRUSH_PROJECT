@@ -1,22 +1,19 @@
 package com.ru.practicum.usmeshka_groovy.ui.registration
 
-import android.content.Context.MODE_PRIVATE
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.practicum.usmeshka_groovy.R
 import com.practicum.usmeshka_groovy.databinding.RegistrationFragmentBinding
-import com.ru.practicum.usmeshka_groovy.presentation.viewmodel.PersonalAccountViewModel
+import com.ru.practicum.usmeshka_groovy.domain.models.User
+import com.ru.practicum.usmeshka_groovy.presentation.states.AuthRegState
 import com.ru.practicum.usmeshka_groovy.presentation.viewmodel.RegistrationViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -24,7 +21,8 @@ class RegistrationFragment : Fragment() {
     private var _binding: RegistrationFragmentBinding? = null
     private val binding get() = _binding!!
     private val viewModel: RegistrationViewModel by viewModel()
-    private var progress = 20;
+    private var progress = 20
+    private var user = User()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -65,16 +63,23 @@ class RegistrationFragment : Fragment() {
             override fun afterTextChanged(s: Editable?) {}
         })
 
+        viewModel.authStateLiveData.observe(viewLifecycleOwner) { state ->
+            when (state) {
+                is AuthRegState.Loading -> {}
+                is AuthRegState.Authenticated -> findNavController().navigate(
+                    RegistrationFragmentDirections.actionRegistrationFragmentToStartFragment()
+                )
+                is AuthRegState.Error -> showToast(state.message)
+                is AuthRegState.Filling -> {}
+            }
+        }
+
         arrayOf(
             binding.nextBtn20,
             binding.nextBtn40,
             binding.nextBtn60,
             binding.nextBtn80,
         ).forEach { button -> button.setOnClickListener { onNextClick(button) } }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
     }
 
     fun onNextClick(v: View) {
@@ -89,12 +94,15 @@ class RegistrationFragment : Fragment() {
                 if (selectedId != -1) {
                     val selectedRadioButton: RadioButton = view?.findViewById(selectedId)!!
                     viewModel.saveWhoUse(selectedId, selectedRadioButton.text.toString())
+                    user.isChild = selectedId == 0
                 }
                 binding.regNameSurname.visibility = View.VISIBLE
                 binding.mark2.visibility = View.VISIBLE
             }
 
             binding.nextBtn40.id -> {
+                user.name = binding.name.text.toString()
+                user.surname = binding.surname.text.toString()
                 viewModel.saveNameSurname(
                     binding.name.text.toString(),
                     binding.surname.text.toString()
@@ -118,8 +126,10 @@ class RegistrationFragment : Fragment() {
 
             binding.nextBtn80.id -> {
                 viewModel.saveEmail(binding.emailEt.text.toString())
-                findNavController().navigate(R.id.action_registrationFragment_to_startFragment)
+
+//                findNavController().navigate(R.id.action_registrationFragment_to_startFragment)
                 viewModel.saveRegistration(true)
+                viewModel.register(binding.emailEt.text.toString(), binding.passwordEt.text.toString(), user)
                 // TODO: save all and open app
             }
         }
@@ -150,5 +160,13 @@ class RegistrationFragment : Fragment() {
             binding.mark3,
             binding.mark4,
         ).forEach { it.visibility = View.GONE }
+    }
+
+    private fun showToast(text: String) {
+        Toast.makeText(
+            requireContext(),
+            text,
+            Toast.LENGTH_SHORT
+        ).show()
     }
 }

@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/startFragment"
+        android:id="@+id/infoFragment"
         android:icon="@drawable/info"
-        android:title="Инфо" />
-    <item
-        android:id="@+id/educationFragment"
-        android:icon="@drawable/analytics"
-        android:title="Аналитика" />
+        android:title="@string/info" />
     <item
         android:id="@+id/analythicsFragment"
+        android:icon="@drawable/analytics"
+        android:title="@string/analythics" />
+    <item
+        android:id="@+id/parentImportantFragment"
         android:icon="@drawable/star"
-        android:title="Важное" />
-
+        android:title="@string/important" />
+    <item
+        android:id="@+id/parentShopFragment"
+        android:icon="@drawable/basket"
+        android:title="@string/shop" />
 </menu>

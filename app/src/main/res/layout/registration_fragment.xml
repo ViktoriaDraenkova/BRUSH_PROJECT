@@ -2,10 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registration_all"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_for_background"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:ignore="InvalidId">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_end"
@@ -171,17 +173,28 @@
 
         <Button
             android:id="@+id/next_btn_20"
-            style="@style/ButtonAddNotification"
+            style="@style/ButtonBlueText16White"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/next"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/reg_btn"
+            style="@style/ButtonSecondary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/roboto_medium"
             android:paddingVertical="10dp"
-            android:text="@string/next"
+            android:text="@string/authorisation"
             android:textAllCaps="false"
-            android:textSize="16sp"
-            android:enabled="false"/>
+            android:textSize="16sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -240,13 +253,12 @@
 
         <Button
             android:id="@+id/next_btn_40"
-            style="@style/ButtonAddNotification"
+            style="@style/ButtonBlueText16White"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/roboto_medium"
-            android:paddingVertical="10dp"
             android:text="@string/next"
             android:textAllCaps="false"
             android:textSize="16sp" />
@@ -317,13 +329,12 @@
 
         <Button
             android:id="@+id/next_btn_60"
-            style="@style/ButtonAddNotification"
+            style="@style/ButtonBlueText16White"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/roboto_medium"
-            android:paddingVertical="10dp"
             android:text="@string/next"
             android:textAllCaps="false"
             android:textSize="16sp" />
@@ -366,7 +377,6 @@
             android:textColor="@color/dark_grey_opacity60"
             android:textSize="16sp" />
 
-
         <EditText
             android:id="@+id/email_et"
             style="@style/EdittextStyleWithDiscription"
@@ -375,18 +385,27 @@
             android:hint="@string/enter_your_email"
             tools:ignore="TextFields,TouchTargetSizeCheck" />
 
+        <EditText
+            android:id="@+id/password_et"
+            style="@style/EdittextStyleWithDiscription"
+            android:layout_marginTop="12dp"
+            android:autofillHints=""
+            android:inputType="textPassword"
+            android:hint="@string/enter_your_pass"
+            tools:ignore="TextFields,TouchTargetSizeCheck" />
+
 
         <Button
             android:id="@+id/next_btn_80"
-            style="@style/ButtonAddNotification"
+            style="@style/ButtonBlueText16White"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/roboto_medium"
-            android:paddingVertical="10dp"
             android:text="@string/next"
             android:textAllCaps="false"
             android:textSize="16sp" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

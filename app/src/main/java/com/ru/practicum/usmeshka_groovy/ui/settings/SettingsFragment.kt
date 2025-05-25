@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.practicum.usmeshka_groovy.R
 import com.practicum.usmeshka_groovy.databinding.SettingsFragmentBinding
+import com.ru.practicum.usmeshka_groovy.ui.root.RootActivity
 
 class SettingsFragment : Fragment() {
 
@@ -28,6 +29,7 @@ class SettingsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.switchAccount.setOnClickListener{
             findNavController().navigate(R.id.action_settingsFragment_to_parentImportantFragment)
+            (activity as RootActivity).switchNavBar()
         }
     }
 }

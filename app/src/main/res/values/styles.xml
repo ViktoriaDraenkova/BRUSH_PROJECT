@@ -27,14 +27,13 @@
     </style>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryDark">@color/black</item>
         <item name="colorAccent">@color/blue_top</item>
     </style>
 
     <style name="ButtonStart">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">@font/roboto_bold</item>
         <item name="cornerRadius">54dp</item>
@@ -44,14 +43,15 @@
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:layout_marginBottom">16dp</item>
         <item name="android:background">@drawable/rounded_corners</item>
-        <item name="android:paddingHorizontal">136dp</item>
+        <item name="android:layout_marginHorizontal">16dp</item>
+<!--        <item name="android:paddingHorizontal">136dp</item>-->
         <item name="android:paddingVertical">16dp</item>
     </style>
 
-    <style name="ButtonAddNotification">
+    <style name="ButtonBlueText16White">
         <item name="cornerRadius">54dp</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:background">@drawable/enabled_disabled_btn</item>
         <item name="android:textAllCaps">false</item>
@@ -101,5 +101,46 @@
         <item name="tabTextColor">@color/black</item>
         <item name="tabIndicatorColor">@color/black</item>
         <item name="tabMode">fixed</item>
+    </style>
+
+    <style name="ButtonSecondary">
+        <item name="android:textColor">@color/blue_top</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:paddingVertical">14dp</item>
+    </style>
+
+    <style name="ButtonBlue">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/rounded_corners</item>
+        <item name="android:paddingVertical">8dp</item>
+        <item name="android:textAllCaps">false</item>
+
+    </style>
+
+    <style name="EdittextStyleWithDescription" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">30dp</item>
+        <item name="android:paddingVertical">16dp</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:drawableTint">@color/light_gray</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:inputType">text</item>
+        <item name="android:maxLength">28</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:textCursorDrawable">@drawable/cursor</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">false</item>
     </style>
 </resources>

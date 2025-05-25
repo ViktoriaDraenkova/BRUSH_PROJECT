@@ -23,13 +23,8 @@ class SplashFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.splash_fragment, container, false)
 
-        val needRegistration = !prefsManager.getRegistrationCompleted()
         Handler(Looper.myLooper()!!).postDelayed({
-            if (!needRegistration) {
-                findNavController().navigate(R.id.action_splashFragment_to_startFragment)
-            } else {
-                findNavController().navigate(R.id.action_splashFragment_to_registrationFragment)
-            }
+            findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToAuthorisationFragment())
         }, 2000)
         return  view
     }

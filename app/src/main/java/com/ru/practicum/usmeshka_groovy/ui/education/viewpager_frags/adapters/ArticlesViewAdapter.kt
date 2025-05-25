@@ -1,6 +1,5 @@
 package com.ru.practicum.usmeshka_groovy.ui.education.viewpager_frags.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

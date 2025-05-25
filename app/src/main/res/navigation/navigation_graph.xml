@@ -11,11 +11,11 @@
         android:label="VideosFragment" />
     <fragment
         android:id="@+id/timerFragment"
-        android:name="com.ru.practicum.usmeshka_groovy.ui.home.TimerFragment"
+        android:name="com.ru.practicum.usmeshka_groovy.ui.timer.TimerFragment"
         android:label="TimerFragment" />
     <fragment
         android:id="@+id/personalAccountFragment"
-        android:name="com.ru.practicum.usmeshka_groovy.ui.profile.PersonalAccountFragment"
+        android:name="com.ru.practicum.usmeshka_groovy.ui.child_profile.PersonalAccountFragment"
         android:label="PersonalAccountFragment" >
         <action
             android:id="@+id/action_personalAccountFragment_to_settingsFragment"
@@ -30,11 +30,8 @@
         android:name="com.ru.practicum.usmeshka_groovy.util.SplashFragment"
         android:label="SplashFragment" >
         <action
-            android:id="@+id/action_splashFragment_to_startFragment"
-            app:destination="@id/startFragment" />
-        <action
-            android:id="@+id/action_splashFragment_to_registrationFragment"
-            app:destination="@id/registrationFragment" />
+            android:id="@+id/action_splashFragment_to_authorisationFragment"
+            app:destination="@id/authorisationFragment" />
     </fragment>
     <fragment
         android:id="@+id/startFragment"
@@ -52,6 +49,13 @@
         <action
             android:id="@+id/action_startFragment_to_educationFragment"
             app:destination="@id/educationFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_parentShopFragment2"
+            app:destination="@id/parentShopFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
@@ -86,6 +90,82 @@
     </fragment>
     <fragment
         android:id="@+id/parentImportantFragment"
-        android:name="com.ru.practicum.usmeshka_groovy.ui.par.parent_important.ParentImportantFragment"
+        android:name="com.ru.practicum.usmeshka_groovy.ui.parent_profile.parent_important.ParentImportantFragment"
         android:label="ParentImportantFragment" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.ru.practicum.usmeshka_groovy.ui.parent_profile.parent_info.InfoFragment"
+        android:label="InfoFragment" >
+        <action
+            android:id="@+id/action_infoFragment_to_articlesFragmentP"
+            app:destination="@id/articlesFragmentP" />
+        <action
+            android:id="@+id/action_infoFragment_to_newsFragmentP"
+            app:destination="@id/newsFragmentP" />
+    </fragment>
+    <fragment
+        android:id="@+id/articlesFragmentP"
+        android:name="com.ru.practicum.usmeshka_groovy.ui.parent_profile.parent_info.ArticlesFragmentP"
+        android:label="ArticlesFragmentP" />
+    <fragment
+        android:id="@+id/newsFragmentP"
+        android:name="com.ru.practicum.usmeshka_groovy.ui.parent_profile.parent_info.NewsFragmentP"
+        android:label="NewsFragmentP" />
+    <fragment
+        android:id="@+id/authorisationFragment"
+        android:name="com.ru.practicum.usmeshka_groovy.ui.authorisation.AuthorisationFragment"
+        android:label="AuthorisationFragment" >
+        <action
+            android:id="@+id/action_authorisationFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_authorisationFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productsListFragment"
+        android:name="com.ru.practicum.usmeshka_groovy.ui.products_list.ProductsListFragment"
+        android:label="parentShopHomeFragment" >
+        <action
+            android:id="@+id/action_productsListFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/parentShopFragment"
+        android:name="com.ru.practicum.usmeshka_groovy.ui.parent_shop.ParentShopFragment"
+        android:label="ParentShopFragment" >
+        <action
+            android:id="@+id/action_parentShopFragment_to_productsListFragment"
+            app:destination="@id/productsListFragment" />
+        <action
+            android:id="@+id/action_parentShopFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_parentShopFragment_to_parentShopAccountFragment"
+            app:destination="@id/parentShopAccountFragment2" />
+        <action
+            android:id="@+id/action_parentShopFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.ru.practicum.usmeshka_groovy.ui.cart.CartFragment"
+        android:label="CartFragment" >
+        <action
+            android:id="@+id/action_cartFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.ru.practicum.usmeshka_groovy.ui.product_details.ProductDetailsFragment"
+        android:label="ProductDetailsFragment">
+        <argument
+            android:name="product"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/parentShopAccountFragment2"
+        android:name="com.ru.practicum.usmeshka_groovy.ui.parent_boughts_fragment.ParentShopAccountFragment"
+        android:label="ParentShopAccountFragment" />
 </navigation>

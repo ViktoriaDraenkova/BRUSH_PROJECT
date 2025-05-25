@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.mikephil.charting.components.AxisBase
 import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.components.YAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
@@ -17,12 +16,9 @@ import com.github.mikephil.charting.formatter.ValueFormatter
 import com.practicum.usmeshka_groovy.R
 import com.practicum.usmeshka_groovy.databinding.AnalythicsFragmentBinding
 import com.ru.practicum.usmeshka_groovy.presentation.viewmodel.AnalyticsViewModel
-import com.ru.practicum.usmeshka_groovy.ui.profile.NotificationsViewAdapter
 import com.ru.practicum.usmeshka_groovy.util.RoundBarChartRender
 import com.ru.practicum.usmeshka_groovy.util.getCurrentDate
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.util.Calendar
-import kotlin.math.log
 
 class AnalythicsFragment : Fragment() {
     private var _binding: AnalythicsFragmentBinding? = null
