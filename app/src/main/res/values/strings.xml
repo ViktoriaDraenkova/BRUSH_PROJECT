@@ -7,6 +7,7 @@
     <string name="my_name_is">Меня зовут Стомик \n Давай чистить зубки вместе!</string>
     <string name="settings">Настройки</string>
     <string name="account">Аккаунт</string>
+    <string name="bind_account">Привязать аккаунт</string>
     <string name="switch_account">Переключить аккаунт</string>
     <string name="russian">Русский</string>
     <string name="english">English</string>
@@ -48,13 +49,16 @@
     <string name="sales">Скидки от партнёров</string>
     <string name="news">Новости</string>
     <string name="_19_05_2024">19.05.2024</string>
-    <string name="greeting">Рады вас снова видеть в нашем приложении, дорогой пользователь</string>
+    <string name="greeting">Рады вас видеть в нашем приложении, дорогой пользователь!</string>
     <string name="authorisation">Авторизация</string>
     <string name="loading">Загрузка...</string>
     <string name="enter_login_password">Пожалуйста, введите логин и пароль</string>
     <string name="login">Логин (e-mail)</string>
     <string name="password">Пароль</string>
     <string name="enter">Войти</string>
+    <string name="synk_key">Синхронизационный ключ</string>
+    <string name="bind_acc">Привязать аккаунт</string>
+    <string name="copy">Копировать код</string>
 
     <string-array name="array_for_spinner">
         <item>Повторять каждый день</item>

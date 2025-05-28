@@ -11,6 +11,7 @@ import com.ru.practicum.usmeshka_groovy.presentation.viewmodel.ProductDetailsVie
 import com.ru.practicum.usmeshka_groovy.presentation.viewmodel.ProductsListFragmentViewModel
 import com.ru.practicum.usmeshka_groovy.presentation.viewmodel.ProfileViewModel
 import com.ru.practicum.usmeshka_groovy.presentation.viewmodel.RegistrationViewModel
+import com.ru.practicum.usmeshka_groovy.presentation.viewmodel.SettingsViewModel
 import com.ru.practicum.usmeshka_groovy.presentation.viewmodel.TimerFragmentViewModel
 import com.ru.practicum.usmeshka_groovy.presentation.viewmodel.VideoViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -56,5 +57,8 @@ val viewModelModule = module {
     }
     viewModel {
         ProductsListFragmentViewModel(get(), get())
+    }
+    viewModel{
+        SettingsViewModel(get())
     }
 }

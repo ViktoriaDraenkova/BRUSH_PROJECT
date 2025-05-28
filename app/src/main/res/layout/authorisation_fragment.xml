@@ -42,25 +42,27 @@
         android:layout_height="match_parent"
         android:layout_marginTop="200dp"
         android:background="@drawable/bottomsheet_bg"
+        android:gravity="center"
         android:orientation="vertical"
         android:visibility="gone"
-        android:gravity="center"
         app:behavior_hideable="false"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         app:layout_constraintStart_toStartOf="parent">
+
         <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:indeterminate="true"
-            android:indeterminateTintMode="src_atop"
-            android:indeterminateTint="@color/blue_top"/>
+            android:indeterminateTint="@color/blue_top"
+            android:indeterminateTintMode="src_atop" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:text="@string/loading"
             android:textColor="@color/black"
-            android:layout_marginTop="12dp"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -70,7 +72,7 @@
         android:layout_marginTop="200dp"
         android:background="@drawable/bottomsheet_bg"
         android:orientation="vertical"
-        android:visibility="visible"
+        android:visibility="gone"
         app:behavior_hideable="false"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         app:layout_constraintStart_toStartOf="parent">
@@ -110,10 +112,10 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login"
+                style="@style/EdittextStyleWithDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/login"
-                style="@style/EdittextStyleWithDescription"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -128,10 +130,10 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
+                style="@style/EdittextStyleWithDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
-                style="@style/EdittextStyleWithDescription"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -161,4 +163,5 @@
             android:textSize="16sp" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

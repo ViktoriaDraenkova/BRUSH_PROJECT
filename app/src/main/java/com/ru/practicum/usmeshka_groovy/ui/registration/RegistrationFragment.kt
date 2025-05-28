@@ -79,6 +79,7 @@ class RegistrationFragment : Fragment() {
             binding.nextBtn40,
             binding.nextBtn60,
             binding.nextBtn80,
+            binding.nextBtn100
         ).forEach { button -> button.setOnClickListener { onNextClick(button) } }
     }
 
@@ -127,10 +128,20 @@ class RegistrationFragment : Fragment() {
             binding.nextBtn80.id -> {
                 viewModel.saveEmail(binding.emailEt.text.toString())
 
-//                findNavController().navigate(R.id.action_registrationFragment_to_startFragment)
+                if(user.isChild){
+                    viewModel.saveRegistration(true)
+                    viewModel.register(binding.emailEt.text.toString(), binding.passwordEt.text.toString(), user)
+                }
+                else{
+                    binding.regSink.visibility = View.VISIBLE
+                    binding.regEmail.visibility = View.GONE
+                }
+
+            }
+            binding.nextBtn100.id ->{
+                user.childId = binding.synkKey.text.toString()  // TODO: check user exist, maybe confirm from child account or show QR
                 viewModel.saveRegistration(true)
                 viewModel.register(binding.emailEt.text.toString(), binding.passwordEt.text.toString(), user)
-                // TODO: save all and open app
             }
         }
     }

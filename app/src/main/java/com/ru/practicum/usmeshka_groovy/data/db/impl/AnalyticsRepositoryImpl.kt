@@ -1,7 +1,6 @@
 package com.ru.practicum.usmeshka_groovy.data.db.impl
 
 import com.ru.practicum.usmeshka_groovy.data.db.AppDatabase
-import com.ru.practicum.usmeshka_groovy.data.db.dao.AnalyticsDao
 import com.ru.practicum.usmeshka_groovy.data.db.entity.DataForAnalyticsEntity
 import com.ru.practicum.usmeshka_groovy.domain.analytics.AnalyticsRepository
 import kotlinx.coroutines.flow.Flow

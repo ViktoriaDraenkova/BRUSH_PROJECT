@@ -10,6 +10,7 @@ data class User(
     var surname: String,
     var patronymic: String,
     var isChild: Boolean,
+    var childId: String?,
 ) : Parcelable {
-    constructor() : this("", "", "", "", false)
+    constructor() : this("", "", "", "", false, null)
 }

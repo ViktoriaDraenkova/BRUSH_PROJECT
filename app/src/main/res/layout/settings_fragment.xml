@@ -26,12 +26,11 @@
         android:textColor="@color/blue_top"
         android:textSize="24sp" />
 
-
     <Button
         android:id="@+id/acccount"
         style="@style/SettingsButtonsStyle"
         android:drawableStart="@drawable/person_small"
-        android:text="@string/account" />
+        android:text="@string/bind_acc" />
 
     <Button
         android:id="@+id/switch_account"

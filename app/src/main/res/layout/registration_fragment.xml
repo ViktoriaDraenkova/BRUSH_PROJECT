@@ -407,5 +407,62 @@
             android:textAllCaps="false"
             android:textSize="16sp" />
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/reg_sink"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="260dp"
+        android:background="@drawable/bottomsheet_bg"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:behavior_hideable="false"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_data_or_sink_text">
 
+        <TextView
+            android:id="@+id/auth_text_for_synk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/bind_acc"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/synk_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:boxStrokeColor="@color/gray"
+            app:hintTextColor="@color/light_gray"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/synk_key"
+                style="@style/EdittextStyleWithDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/synk_key"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/next_btn_100"
+            style="@style/ButtonBlueText16White"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/enter"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
