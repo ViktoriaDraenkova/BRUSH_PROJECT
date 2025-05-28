@@ -59,6 +59,6 @@ class ArticlesFragmentP : Fragment() {
     }
 
     companion object {
-        fun newInstance() = ArticlesFragment().apply {}
+        fun newInstance() = ArticlesFragmentP().apply {}
     }
 }

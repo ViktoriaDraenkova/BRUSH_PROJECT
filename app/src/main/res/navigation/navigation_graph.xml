@@ -82,6 +82,9 @@
         <action
             android:id="@+id/action_educationFragment_to_articlesFragment"
             app:destination="@id/articlesFragment" />
+        <action
+            android:id="@+id/action_educationFragment_to_articleDetailFragment"
+            app:destination="@id/articleDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"

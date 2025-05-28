@@ -5,6 +5,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.ru.practicum.usmeshka_groovy.data.products.impl.ProductsRepositoryImpl
 import com.practicum.testappshop.data.purchases.PurchasesRepositoryImpl
+import com.ru.practicum.usmeshka_groovy.data.analytics.impl.FirebaseAnalyticsRepositoryImpl
 import com.ru.practicum.usmeshka_groovy.data.articles.ArticlesRepositoryImpl
 import com.ru.practicum.usmeshka_groovy.data.authorisation.AuthRepositoryImpl
 import com.ru.practicum.usmeshka_groovy.data.cart.CartRepository
@@ -35,7 +36,7 @@ val repositoryModule = module {
         NotificationRepositoryImpl(get(), get())
     }
     single<AnalyticsRepository> {
-        AnalyticsRepositoryImpl(get())
+        FirebaseAnalyticsRepositoryImpl(get())
     }
     single<AchievementsRepository> {
         AchievementsRepositoryImpl()

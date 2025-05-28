@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.practicum.usmeshka_groovy.databinding.ArticlesFragmentBinding
 import com.ru.practicum.usmeshka_groovy.presentation.viewmodel.ArticlesViewModel
+import com.ru.practicum.usmeshka_groovy.ui.education.EducationFragmentDirections
 import com.ru.practicum.usmeshka_groovy.ui.education.viewpager_frags.adapters.ArticlesViewAdapter
 import com.ru.practicum.usmeshka_groovy.ui.parent_profile.parent_info.InfoFragmentDirections
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -40,7 +41,7 @@ class ArticlesFragment : Fragment() {
         recyclerView = binding.recyclerArticles
         articlesViewAdapter = ArticlesViewAdapter {
             findNavController().navigate(
-                InfoFragmentDirections.actionInfoFragmentToArticleDetailFragment(
+                EducationFragmentDirections.actionEducationFragmentToArticleDetailFragment(
                     Gson().toJson(it)
                 )
             )

@@ -3,6 +3,7 @@ package com.ru.practicum.usmeshka_groovy.ui.registration
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -104,7 +105,8 @@ class RegistrationFragment : Fragment() {
                 if (selectedId != -1) {
                     val selectedRadioButton: RadioButton = view?.findViewById(selectedId)!!
                     viewModel.saveWhoUse(selectedId, selectedRadioButton.text.toString())
-                    user.isChild = selectedId == 0
+                    user.isChild = selectedId == binding.radioChild.id
+                    Log.d("ischild", selectedId.toString())
                 }
                 binding.regNameSurname.visibility = View.VISIBLE
                 binding.mark2.visibility = View.VISIBLE

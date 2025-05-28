@@ -32,7 +32,7 @@ val interactorModule = module {
     }
 
     single<AnalyticsInteractor> {
-        AnalyticsInteractorImpl(get())
+        AnalyticsInteractorImpl(get(), get())
     }
 
     single<AchievementInteractor> {

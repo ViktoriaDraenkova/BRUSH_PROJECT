@@ -155,7 +155,7 @@
             android:orientation="vertical">
 
             <RadioButton
-                android:id="@+id/radio_pirates"
+                android:id="@+id/radio_child"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_regular"
@@ -163,7 +163,7 @@
                 android:textSize="20sp" />
 
             <RadioButton
-                android:id="@+id/radio_ninjas"
+                android:id="@+id/radio_parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_regular"
@@ -414,7 +414,7 @@
         android:layout_marginTop="260dp"
         android:background="@drawable/bottomsheet_bg"
         android:orientation="vertical"
-        android:visibility="visible"
+        android:visibility="gone"
         app:behavior_hideable="false"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         app:layout_constraintStart_toStartOf="parent"

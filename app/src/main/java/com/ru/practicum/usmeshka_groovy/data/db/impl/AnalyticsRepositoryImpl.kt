@@ -7,22 +7,22 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 class AnalyticsRepositoryImpl(private val appDatabase: AppDatabase) : AnalyticsRepository {
-    override suspend fun getAllAnal(): Flow<List<Long>> = flow {
+
+    private fun mapEntityToLong(analyticsEntity: DataForAnalyticsEntity): Long {
+        return analyticsEntity.dataOfCleaning
+    }
+
+    override suspend fun getAllAnal(childId: String): Flow<List<Long>> = flow {
         emit(
             appDatabase.analyticsDao().getAllAnalytics().map { anal ->
                 mapEntityToLong(anal)
             })
     }
 
-    override suspend fun deleteAnal(date: Long) {
+    override suspend fun deleteAnal(childId: String, date: Long) {
         appDatabase.analyticsDao().deleteFromAnalytics(date)
     }
 
-    override suspend fun insertAnal(date: Long) {
-        appDatabase.analyticsDao().insertToAnalytics(DataForAnalyticsEntity(dataOfCleaning = date))
-    }
-
-    private fun mapEntityToLong(analyticsEntity: DataForAnalyticsEntity): Long {
-        return analyticsEntity.dataOfCleaning
-    }
+    override suspend fun insertAnal(childId: String, date: Long) {
+        appDatabase.analyticsDao().insertToAnalytics(DataForAnalyticsEntity(dataOfCleaning = date))    }
 }

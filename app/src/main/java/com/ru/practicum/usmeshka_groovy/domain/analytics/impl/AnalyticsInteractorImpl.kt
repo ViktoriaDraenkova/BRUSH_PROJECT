@@ -3,12 +3,20 @@ package com.ru.practicum.usmeshka_groovy.domain.analytics.impl
 import android.util.Log
 import com.ru.practicum.usmeshka_groovy.domain.analytics.AnalyticsInteractor
 import com.ru.practicum.usmeshka_groovy.domain.analytics.AnalyticsRepository
+import com.ru.practicum.usmeshka_groovy.domain.authorisation.AuthRepository
+import kotlinx.coroutines.flow.first
 import kotlin.math.roundToInt
 
-class AnalyticsInteractorImpl(val analyticsRepository: AnalyticsRepository) : AnalyticsInteractor {
+class AnalyticsInteractorImpl(
+    val analyticsRepository: AnalyticsRepository,
+    val authRepository: AuthRepository
+) : AnalyticsInteractor {
     override suspend fun getDataForGraph(date: Long): List<Pair<Long, Int>> {
         val listp = mutableMapOf<Long, Int>()
-        val flow = analyticsRepository.getAllAnal()
+
+
+
+        val flow = analyticsRepository.getAllAnal( getUser())
         flow.collect { list ->
             for (i in list) {
                 if (i >= date - 7 * 86400) {
@@ -16,7 +24,7 @@ class AnalyticsInteractorImpl(val analyticsRepository: AnalyticsRepository) : An
                 }
             }
         }
-        for (i in date downTo  date - 7 * 86400 + 1 step 86400) {
+        for (i in date downTo date - 7 * 86400 + 1 step 86400) {
             if (!listp.contains(i)) {
                 listp[i] = 0
             }
@@ -26,7 +34,7 @@ class AnalyticsInteractorImpl(val analyticsRepository: AnalyticsRepository) : An
 
     override suspend fun getCountOfCleans(date: Long): Int {
         var counter = 0
-        val flow = analyticsRepository.getAllAnal()
+        val flow = analyticsRepository.getAllAnal(getUser())
         flow.collect { list ->
             for (i in list) {
                 if (i == date) {
@@ -38,15 +46,15 @@ class AnalyticsInteractorImpl(val analyticsRepository: AnalyticsRepository) : An
     }
 
     override suspend fun getCountOfDaysWithoutBreaks(date: Long): Int {
-        val flow = analyticsRepository.getAllAnal()
+        val flow = analyticsRepository.getAllAnal(getUser())
         var counter = 0
         flow.collect { list ->
             val set = HashSet<Long>(list)
             Log.d("", list.toString())
             Log.d("", set.toString())
             var curDay = date - 86400
-            while (true){
-                if (set.contains(curDay)){
+            while (true) {
+                if (set.contains(curDay)) {
                     counter++
                     curDay -= 86400
                 } else {
@@ -63,7 +71,7 @@ class AnalyticsInteractorImpl(val analyticsRepository: AnalyticsRepository) : An
 
     override suspend fun getMiddleCountOfCleansPerDay(): Int {
         val listp = mutableMapOf<Long, Int>()
-        val flow = analyticsRepository.getAllAnal()
+        val flow = analyticsRepository.getAllAnal(getUser())
         flow.collect { list ->
             for (i in list) {
                 listp[i] = (listp[i] ?: 0) + 1
@@ -74,6 +82,15 @@ class AnalyticsInteractorImpl(val analyticsRepository: AnalyticsRepository) : An
     }
 
     override suspend fun addClean(date: Long) {
-        analyticsRepository.insertAnal(date)
+        analyticsRepository.insertAnal(getUser(), date)
+    }
+
+    private suspend fun getUser(): String {
+        val currUser = authRepository.getCurrentUser().first().getOrThrow()!!
+        if (currUser.isChild) {
+            return currUser.id
+        } else {
+            return currUser.childId!!
+        }
     }
 }
