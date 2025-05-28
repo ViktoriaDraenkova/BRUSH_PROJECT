@@ -1,16 +1,10 @@
-package com.ru.practicum.usmeshka_groovy.ui.goals
+package com.ru.practicum.usmeshka_groovy.ui.analytics
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.practicum.usmeshka_groovy.databinding.AchievementFragmentBinding
-import com.practicum.usmeshka_groovy.databinding.NotifyCardsFragmentBinding
 import com.ru.practicum.usmeshka_groovy.domain.models.Achievement
-import com.ru.practicum.usmeshka_groovy.domain.models.Notification
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 
 class AchievementsViewAdapter() :
     RecyclerView.Adapter<AchievementsViewAdapter.ViewHolder>() {

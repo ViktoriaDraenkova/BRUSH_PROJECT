@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.practicum.usmeshka_groovy.databinding.AuthorisationFragmentBinding
 import com.ru.practicum.usmeshka_groovy.presentation.states.AuthRegState
 import com.ru.practicum.usmeshka_groovy.presentation.viewmodel.AuthorisationViewModel
+import com.ru.practicum.usmeshka_groovy.ui.root.RootActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AuthorisationFragment : Fragment() {
@@ -31,8 +32,16 @@ class AuthorisationFragment : Fragment() {
         vm.userLiveData.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is AuthRegState.Loading -> showLoading()
-                is AuthRegState.Authenticated -> findNavController().navigate(
-                    AuthorisationFragmentDirections.actionAuthorisationFragmentToStartFragment())
+                is AuthRegState.Authenticated -> {
+                    (activity as RootActivity).switchNavBar(state.user.isChild)
+                    if (state.user.isChild) {
+                        findNavController().navigate(
+                            AuthorisationFragmentDirections.actionAuthorisationFragmentToStartFragment())
+                    } else {
+                        findNavController().navigate(
+                            AuthorisationFragmentDirections.actionAuthorisationFragmentToInfoFragment())
+                    }
+                }
                 is AuthRegState.Error -> showToast(state.message)
                 is AuthRegState.Filling -> showContent()
             }

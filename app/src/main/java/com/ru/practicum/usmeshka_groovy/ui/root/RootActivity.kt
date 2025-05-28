@@ -42,9 +42,8 @@ class RootActivity : AppCompatActivity() {
         childNavBar.visibility = View.VISIBLE
     }
 
-    fun switchNavBar() {
+    fun switchNavBar(isChild: Boolean) {
         childNavBar.menu.clear()
-        isChild = !isChild
         if (isChild) {
             menuInflater.inflate(R.menu.bottom_navigation_menu, childNavBar.menu)
         } else {

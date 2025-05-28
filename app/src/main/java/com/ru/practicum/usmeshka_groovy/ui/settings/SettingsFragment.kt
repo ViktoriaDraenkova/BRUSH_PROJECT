@@ -46,7 +46,7 @@ class SettingsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.switchAccount.setOnClickListener {
             findNavController().navigate(R.id.action_settingsFragment_to_parentImportantFragment)
-            (activity as RootActivity).switchNavBar()
+//            (activity as RootActivity).switchNavBar()
         }
 
         viewModel.getuidLivedata().observe(viewLifecycleOwner) { uid ->

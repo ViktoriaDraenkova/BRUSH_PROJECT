@@ -1,4 +1,4 @@
-package com.ru.practicum.usmeshka_groovy.ui.goals
+package com.ru.practicum.usmeshka_groovy.ui.analytics
 
 import android.os.Bundle
 import android.util.Log
@@ -46,8 +46,6 @@ class AnalythicsFragment : Fragment() {
         }
 
         viewModel.getAchievementsLiveData().observe(viewLifecycleOwner) {
-
-            Log.d("AAAAAAA", it.toString())
             achievementsViewAdapter!!.setList(it)
         }
 

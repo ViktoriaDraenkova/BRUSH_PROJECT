@@ -15,6 +15,8 @@ import com.practicum.usmeshka_groovy.databinding.RegistrationFragmentBinding
 import com.ru.practicum.usmeshka_groovy.domain.models.User
 import com.ru.practicum.usmeshka_groovy.presentation.states.AuthRegState
 import com.ru.practicum.usmeshka_groovy.presentation.viewmodel.RegistrationViewModel
+import com.ru.practicum.usmeshka_groovy.ui.authorisation.AuthorisationFragmentDirections
+import com.ru.practicum.usmeshka_groovy.ui.root.RootActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RegistrationFragment : Fragment() {
@@ -66,9 +68,16 @@ class RegistrationFragment : Fragment() {
         viewModel.authStateLiveData.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is AuthRegState.Loading -> {}
-                is AuthRegState.Authenticated -> findNavController().navigate(
-                    RegistrationFragmentDirections.actionRegistrationFragmentToStartFragment()
-                )
+                is AuthRegState.Authenticated -> {
+                    (activity as RootActivity).switchNavBar(state.user.isChild)
+                    if (state.user.isChild) {
+                        findNavController().navigate(
+                            RegistrationFragmentDirections.actionRegistrationFragmentToStartFragment())
+                    } else {
+                        findNavController().navigate(
+                            RegistrationFragmentDirections.actionRegistrationFragmentToInfoFragment())
+                    }
+                }
                 is AuthRegState.Error -> showToast(state.message)
                 is AuthRegState.Filling -> {}
             }

@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/analythicsFragment"
-        android:name="com.ru.practicum.usmeshka_groovy.ui.goals.AnalythicsFragment"
+        android:name="com.ru.practicum.usmeshka_groovy.ui.analytics.AnalythicsFragment"
         android:label="AnalythicsFragment" />
     <fragment
         android:id="@+id/splashFragment"
@@ -64,6 +64,9 @@
         <action
             android:id="@+id/action_registrationFragment_to_startFragment"
             app:destination="@id/startFragment" />
+        <action
+            android:id="@+id/action_registrationFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
     </fragment>
     <fragment
         android:id="@+id/articlesFragment"
@@ -124,6 +127,9 @@
         <action
             android:id="@+id/action_authorisationFragment_to_startFragment"
             app:destination="@id/startFragment" />
+        <action
+            android:id="@+id/action_authorisationFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
     </fragment>
     <fragment
         android:id="@+id/productsListFragment"
